@@ -1,0 +1,27 @@
+name: Notify Collaborators on PR Creation
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify collaborators with a comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // List your collaborators here
+            const collaborators = [
+              'LETI-136706',
+            ];
+            const mentionString = collaborators.map(user => `@${user}`).join(' ');
+            const body = `:bell: ${mentionString}\nA new pull request (#${{ github.event.pull_request.number }}) was created by @${{ github.event.pull_request.user.login }}: **${{ github.event.pull_request.title }}**\n${{ github.event.pull_request.html_url }}`;
+            github.rest.issues.createComment({
+              issue_number: context.payload.pull_request.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body
+            });
+
