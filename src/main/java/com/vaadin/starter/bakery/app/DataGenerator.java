@@ -31,6 +31,9 @@ import com.vaadin.starter.bakery.backend.repositories.ProductRepository;
 import com.vaadin.starter.bakery.backend.repositories.UserRepository;
 
 @SpringComponent
+/**
+ * esto es para la colaboracion avanzada
+ */
 public class DataGenerator implements HasLogger {
 
 	private static final String[] FILLING = new String[] { "Strawberry", "Chocolate", "Blueberry", "Raspberry",
