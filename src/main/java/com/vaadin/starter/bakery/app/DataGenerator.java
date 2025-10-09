@@ -32,7 +32,7 @@ import com.vaadin.starter.bakery.backend.repositories.UserRepository;
 
 @SpringComponent
 /**
- * esto es para la colaboracion avanzada
+ * esto es para la colaboracion avanzada JAVADOC?
  */
 public class DataGenerator implements HasLogger {
 
