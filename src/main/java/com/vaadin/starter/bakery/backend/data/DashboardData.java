@@ -4,7 +4,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import com.vaadin.starter.bakery.backend.data.entity.Product;
-
+/**
+ * Holds statistical data for the dashboard, including delivery statistics,
+ * sales per month, and product deliveries.
+ */
 public class DashboardData {
 
 	private DeliveryStats deliveryStats;
